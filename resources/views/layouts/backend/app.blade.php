@@ -28,6 +28,9 @@
     <!-- Morris Chart Css-->
     <link href="{{asset("assets/backend/plugins/morrisjs/morris.css")}}" rel="stylesheet" />
 
+    {{-- toastr css --}}
+    <link rel="stylesheet" href="//cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
     <!-- Custom Css -->
     <link href="{{asset("assets/backend/css/style.css")}}" rel="stylesheet">
 
@@ -116,11 +119,23 @@
     
         <!-- Custom Js -->
         <script src="{{asset("assets/backend/js/admin.js")}}"></script>
-        <script src="{{asset("assets/backend/js/pages/index.js")}}"></script>
     
         <!-- Demo Js -->
         <script src="{{asset("assets/backend/js/demo.js")}}"></script>
-    
+        
+        {{-- toaster js --}}
+        <script src="//cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+        {!! Toastr::message() !!}
+        <script>
+            @if($errors->any()) 
+                @foreach($errors->all() as $error)
+                    toastr.error('{{ $error }}','Error',{
+                        closeButton: true,
+                        progressBar: true,
+                    });
+                @endforeach
+            @endif
+        </script>
     @stack('js')
 </body>
 </html>

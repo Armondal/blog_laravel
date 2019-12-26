@@ -5,7 +5,6 @@
 @endpush
 
 @section('content')
-<div class="container">
     <div class="container-fluid">
         <div class="block-header">
             <h2>DASHBOARD</h2>
@@ -315,9 +314,8 @@
             <!-- #END# Browser Usage -->
         </div>
     </div>
-</div>
 @endsection
 
 @push('js')
-    
+    <script src="{{asset("assets/backend/js/pages/index.js")}}"></script>    
 @endpush
