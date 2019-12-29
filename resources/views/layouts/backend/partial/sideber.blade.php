@@ -44,6 +44,12 @@
                                 <span>Tag</span>
                             </a>
                         </li>
+                        <li class="{{Request::is('admin/category*') ? 'active' : ''}}">
+                                <a href="{{ route('admin.category.index') }}">
+                                <i class="material-icons">apps</i>
+                                <span>Category</span>
+                            </a>
+                        </li>
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="material-icons">input</i>
